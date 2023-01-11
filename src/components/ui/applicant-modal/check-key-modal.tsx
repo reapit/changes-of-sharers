@@ -17,11 +17,10 @@ import { CHECK_KEY_TERM } from '../../../constants/applicant-data'
 
 export type CheckKeyModalProps = {
   Modal: React.FC<Partial<ModalProps>>
-  isOpen: boolean
   onModalClose: () => void
 }
 
-export const CheckKeyModal: FC<CheckKeyModalProps> = ({ Modal, isOpen, onModalClose }) => {
+export const CheckKeyModal: FC<CheckKeyModalProps> = ({ Modal, onModalClose }) => {
   return (
     <Modal className={modalApplicant}>
       <FlexContainer isFlexAuto isFlexColumn>
@@ -55,6 +54,9 @@ export const CheckKeyModal: FC<CheckKeyModalProps> = ({ Modal, isOpen, onModalCl
         </FormLayout>
       </FlexContainer>
       <ButtonGroup alignment="right">
+        <Button type="submit" intent="primary" onClick={onModalClose}>
+          Close
+        </Button>
         <Button chevronRight intent="primary">
           Create Clone
         </Button>

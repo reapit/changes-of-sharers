@@ -6,13 +6,13 @@ import {
   FlexContainer,
   FormLayout,
   Input,
-  Icon,
   Table,
   elMt6,
   elMb6,
   elWFull,
   InputWrap,
   InputGroup,
+  ButtonGroup,
 } from '@reapit/elements'
 import { APPLICANTS_DATA } from '../../../constants/applicant-data'
 import { formLayoutModal, modalApplicant, checkboxStyle, tableStyle } from '../applicants/__style__/style'
@@ -20,11 +20,10 @@ import { cx } from '@linaria/core'
 
 export type AddApplicantModalProps = {
   Modal: React.FC<Partial<ModalProps>>
-  isOpen: boolean
   onModalClose: () => void
 }
 
-export const AddApplicantModal: FC<AddApplicantModalProps> = ({ Modal, isOpen, onModalClose }) => {
+export const AddApplicantModal: FC<AddApplicantModalProps> = ({ Modal, onModalClose }) => {
   const [indexExpandedRow, setIndexExpandedRow] = React.useState<number | null>(null)
   return (
     <Modal className={modalApplicant}>
@@ -120,6 +119,15 @@ export const AddApplicantModal: FC<AddApplicantModalProps> = ({ Modal, isOpen, o
           })}
         />
       </FlexContainer>
+
+      <ButtonGroup alignment="right" className={cx(elMt6, elMb6)}>
+        <Button type="submit" intent="primary" onClick={onModalClose}>
+          Close
+        </Button>
+        <Button chevronRight type="submit" intent="primary">
+          Add Applicant
+        </Button>
+      </ButtonGroup>
     </Modal>
   )
 }

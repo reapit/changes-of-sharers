@@ -85,16 +85,10 @@ export const ApplicantPage: FC = () => {
         </ButtonGroup>
       </FlexContainer>
 
-      {checkKeyModalIsOpen && (
-        <CheckKeyModal Modal={CheckKeyModalView} isOpen={checkKeyModalIsOpen} onModalClose={closeCheckKeyModal} />
-      )}
+      {checkKeyModalIsOpen && <CheckKeyModal Modal={CheckKeyModalView} onModalClose={closeCheckKeyModal} />}
 
       {addApplicantModalIsOpen && (
-        <AddApplicantModal
-          Modal={AddApplicantModalView}
-          isOpen={addApplicantModalIsOpen}
-          onModalClose={closeAddApplicantModal}
-        />
+        <AddApplicantModal Modal={AddApplicantModalView} onModalClose={closeAddApplicantModal} />
       )}
     </>
   )
