@@ -13,6 +13,7 @@ export const formLayoutModal = css`
 
 export const modalApplicant = css`
   top: 50%;
+  width: 30rem;
 `
 
 export const checkboxStyle = css`

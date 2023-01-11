@@ -6,10 +6,10 @@ import {
   FlexContainer,
   Title,
   FormLayout,
-  InputWrap,
   Select,
   Label,
   Input,
+  InputWrapFull,
 } from '@reapit/elements'
 import { formLayoutStyle } from '../check-keys/__style__/style'
 import { modalApplicant } from '../applicants/__style__/style'
@@ -28,11 +28,11 @@ export const CheckKeyModal: FC<CheckKeyModalProps> = ({ Modal, onModalClose }) =
           <Title>Check Keys</Title>
         </FlexContainer>
         <FormLayout hasMargin className={formLayoutStyle}>
-          <InputWrap>
+          <InputWrapFull>
             <Label>Start Date</Label>
             <Input type="date" />
-          </InputWrap>
-          <InputWrap>
+          </InputWrapFull>
+          <InputWrapFull>
             <Label>Term</Label>
             <Select>
               <option key="select-term" value="">
@@ -46,11 +46,11 @@ export const CheckKeyModal: FC<CheckKeyModalProps> = ({ Modal, onModalClose }) =
                 )
               })}
             </Select>
-          </InputWrap>
-          <InputWrap>
+          </InputWrapFull>
+          <InputWrapFull>
             <Label>Rent (pcm)</Label>
             <Input type="number" />
-          </InputWrap>
+          </InputWrapFull>
         </FormLayout>
       </FlexContainer>
       <ButtonGroup alignment="right">

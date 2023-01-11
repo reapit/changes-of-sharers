@@ -125,7 +125,7 @@ export const AddApplicantModal: FC<AddApplicantModalProps> = ({ Modal, onModalCl
           Close
         </Button>
         <Button chevronRight type="submit" intent="primary">
-          Add Applicant
+          Add Selected Applicant
         </Button>
       </ButtonGroup>
     </Modal>
