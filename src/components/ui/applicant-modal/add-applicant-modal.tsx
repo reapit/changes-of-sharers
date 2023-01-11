@@ -121,7 +121,7 @@ export const AddApplicantModal: FC<AddApplicantModalProps> = ({ Modal, onModalCl
       </FlexContainer>
 
       <ButtonGroup alignment="right" className={cx(elMt6, elMb6)}>
-        <Button type="submit" intent="primary" onClick={onModalClose}>
+        <Button type="submit" intent="low" onClick={onModalClose}>
           Close
         </Button>
         <Button chevronRight type="submit" intent="primary">

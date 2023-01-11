@@ -54,7 +54,7 @@ export const CheckKeyModal: FC<CheckKeyModalProps> = ({ Modal, onModalClose }) =
         </FormLayout>
       </FlexContainer>
       <ButtonGroup alignment="right">
-        <Button type="submit" intent="primary" onClick={onModalClose}>
+        <Button type="submit" intent="low" onClick={onModalClose}>
           Close
         </Button>
         <Button chevronRight intent="primary">
