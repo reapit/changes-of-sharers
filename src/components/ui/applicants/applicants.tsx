@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
 
 import { FlexContainer, Title, Table, elWFull, Button, Icon, elMt7, ButtonGroup, useModal } from '@reapit/elements'
-import { actionButton } from './__style__/style'
+import { actionButton, tableStyle } from './__style__/style'
 import { CheckKeyModal } from '../applicant-modal/check-key-modal'
 import { APPLICANTS_DATA } from '../../../constants/applicant-data'
 import { AddApplicantModal } from '../applicant-modal/add-applicant-modal'
+import { cx } from '@linaria/core'
 
 export const ApplicantPage: FC = () => {
   const [indexExpandedRow, setIndexExpandedRow] = React.useState<number | null>(null)
@@ -39,7 +40,7 @@ export const ApplicantPage: FC = () => {
         </FlexContainer>
         <FlexContainer isFlexWrap>
           <Table
-            className={elWFull}
+            className={cx(elWFull, tableStyle)}
             numberColumns={2}
             indexExpandedRow={indexExpandedRow}
             setIndexExpandedRow={setIndexExpandedRow}
@@ -52,7 +53,6 @@ export const ApplicantPage: FC = () => {
                     value: item.name,
                     narrowTable: {
                       showLabel: true,
-                      isFullWidth: true,
                     },
                     cellHasDarkText: true,
                   },
@@ -60,12 +60,11 @@ export const ApplicantPage: FC = () => {
                     label: 'Action',
                     value: (
                       <Button intent="neutral" className={actionButton}>
-                        <Icon icon="cancelSolidSystem" intent="primary" iconSize="small" />
+                        <Icon icon="cancelSolidSystem" intent="primary" />
                       </Button>
                     ),
                     narrowTable: {
                       showLabel: true,
-                      isFullWidth: true,
                       order: 1,
                     },
                   },

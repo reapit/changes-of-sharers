@@ -8,11 +8,15 @@ import {
   Input,
   Icon,
   Table,
-  elMb7,
+  elMt6,
+  elMb6,
   elWFull,
+  InputWrap,
+  InputGroup,
 } from '@reapit/elements'
 import { APPLICANTS_DATA } from '../../../constants/applicant-data'
-import { formLayoutModal, modalApplicant } from '../applicants/__style__/style'
+import { formLayoutModal, modalApplicant, checkboxStyle, tableStyle } from '../applicants/__style__/style'
+import { cx } from '@linaria/core'
 
 export type AddApplicantModalProps = {
   Modal: React.FC<Partial<ModalProps>>
@@ -28,22 +32,62 @@ export const AddApplicantModal: FC<AddApplicantModalProps> = ({ Modal, isOpen, o
         <Title>Add Applicant</Title>
       </FlexContainer>
       <FlexContainer isFlexColumn>
-        <FormLayout hasMargin className={formLayoutModal}>
-          <Input type="search" placeholder="search by name" />
-          <Input type="search" placeholder="search by address" />
-          <Input type="search" placeholder="search by code" />
-          <Input type="search" placeholder="search by telephone" />
-          <Input type="search" placeholder="search by email" />
+        <FormLayout className={formLayoutModal}>
+          <InputWrap>
+            <InputGroup
+              label="Search by Name"
+              type="text"
+              id="name"
+              placeholder="Search by Name"
+              data-testid={'input.searchName'}
+            />
+          </InputWrap>
+          <InputWrap>
+            <InputGroup
+              label="Search by Address"
+              type="text"
+              id="address"
+              placeholder="Search by Address"
+              data-testid={'input.searchAddress'}
+            />
+          </InputWrap>
+          <InputWrap>
+            <InputGroup
+              label="Search by Code"
+              type="text"
+              id="code"
+              placeholder="Search by Code"
+              data-testid={'input.searchCode'}
+            />
+          </InputWrap>
+          <InputWrap>
+            <InputGroup
+              label="Search by Telephone"
+              type="number"
+              id="telephone"
+              placeholder="Search by Telephone"
+              data-testid={'input.searchTelephone'}
+            />
+          </InputWrap>
+          <InputWrap>
+            <InputGroup
+              label="Search by Email"
+              type="number"
+              id="email"
+              placeholder="Search by Email"
+              data-testid={'input.searchEmail'}
+            />
+          </InputWrap>
         </FormLayout>
       </FlexContainer>
-      <FlexContainer className={elMb7}>
+      <FlexContainer className={cx(elMt6, elMb6)}>
         <Button type="submit" intent="primary">
           Search
         </Button>
       </FlexContainer>
       <FlexContainer isFlexWrap>
         <Table
-          className={elWFull}
+          className={cx(elWFull, tableStyle)}
           numberColumns={2}
           indexExpandedRow={indexExpandedRow}
           setIndexExpandedRow={setIndexExpandedRow}
@@ -56,7 +100,6 @@ export const AddApplicantModal: FC<AddApplicantModalProps> = ({ Modal, isOpen, o
                   value: item.name,
                   narrowTable: {
                     showLabel: true,
-                    isFullWidth: true,
                   },
                   cellHasDarkText: true,
                 },
@@ -64,12 +107,11 @@ export const AddApplicantModal: FC<AddApplicantModalProps> = ({ Modal, isOpen, o
                   label: 'Action',
                   value: (
                     <Button intent="neutral">
-                      <Icon icon="tickSolidSystem" intent="primary" iconSize="small" />
+                      <Input type="checkbox" className={checkboxStyle} />
                     </Button>
                   ),
                   narrowTable: {
                     showLabel: true,
-                    isFullWidth: true,
                     order: 1,
                   },
                 },
