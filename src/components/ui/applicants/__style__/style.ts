@@ -13,6 +13,10 @@ export const formLayoutModal = css`
 
 export const modalApplicant = css`
   top: 50%;
+`
+
+export const modalCheckKeyModal = css`
+  top: 50%;
   width: 30rem;
 `
 

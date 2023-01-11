@@ -12,7 +12,7 @@ import {
   InputWrapFull,
 } from '@reapit/elements'
 import { formLayoutStyle } from '../check-keys/__style__/style'
-import { modalApplicant } from '../applicants/__style__/style'
+import { modalCheckKeyModal } from '../applicants/__style__/style'
 import { CHECK_KEY_TERM } from '../../../constants/applicant-data'
 
 export type CheckKeyModalProps = {
@@ -22,7 +22,7 @@ export type CheckKeyModalProps = {
 
 export const CheckKeyModal: FC<CheckKeyModalProps> = ({ Modal, onModalClose }) => {
   return (
-    <Modal className={modalApplicant}>
+    <Modal className={modalCheckKeyModal}>
       <FlexContainer isFlexAuto isFlexColumn>
         <FlexContainer>
           <Title>Check Keys</Title>
